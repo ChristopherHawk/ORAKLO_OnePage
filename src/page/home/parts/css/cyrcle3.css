@@ -1,0 +1,171 @@
+.C3 {
+  -webkit-filter: url("#shadowed-goo");
+          filter: url("#shadowed-goo");
+}
+
+.C3-item, .C3-open-button {
+  background: linear-gradient(to right, #c31432, #240b36);
+  border-radius: 100%;
+  width: 70px;
+  height: 70px;
+  margin-left: -35px;
+    margin-top: 7px;
+  position: absolute;
+  top: 20px;
+  color: white;
+  text-align: center;
+  line-height: 80px;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform ease-out 200ms;
+  transition: -webkit-transform ease-out 200ms;
+  transition: transform ease-out 200ms;
+  transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
+}
+
+.C3-open {
+  display: none;
+}
+
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background: white;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -12.5px;
+  margin-top: -1.5px;
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
+}
+
+.hamburger-1 {
+  -webkit-transform: translate3d(0, -8px, 0);
+          transform: translate3d(0, -8px, 0);
+}
+
+.hamburger-2 {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.hamburger-3 {
+  -webkit-transform: translate3d(0, 8px, 0);
+          transform: translate3d(0, 8px, 0);
+}
+
+.C3-open:checked + .C3-open-button .hamburger-1 {
+  -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+          transform: translate3d(0, 0, 0) rotate(45deg);
+}
+.C3-open:checked + .C3-open-button .hamburger-2 {
+  -webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
+          transform: translate3d(0, 0, 0) scale(0.1, 1);
+}
+.C3-open:checked + .C3-open-button .hamburger-3 {
+  -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
+          transform: translate3d(0, 0, 0) rotate(-45deg);
+}
+
+.C3 {
+  position: absolute;
+  left: 50%;
+  margin-left: -190px;
+  margin-top: -44px;
+  padding-top: 20px;
+  padding-left: 190px;
+  width: 380px;
+  height: 250px;
+  box-sizing: border-box;
+  font-size: 20px;
+  text-align: left;
+}
+
+.C3-item:hover {
+  background: white;
+  color: #405dff;
+}
+.C3-item:nth-child(3) {
+  -webkit-transition-duration: 70ms;
+          transition-duration: 70ms;
+}
+.C3-item:nth-child(4) {
+  -webkit-transition-duration: 130ms;
+          transition-duration: 130ms;
+}
+.C3-item:nth-child(5) {
+  -webkit-transition-duration: 190ms;
+          transition-duration: 190ms;
+}
+.C3-item:nth-child(6) {
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+}
+.C3-item:nth-child(7) {
+  -webkit-transition-duration: 310ms;
+          transition-duration: 310ms;
+}
+
+.C3-open-button {
+  z-index: 2;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition-duration: 400ms;
+          transition-duration: 400ms;
+  -webkit-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+          transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+  cursor: pointer;
+}
+
+.C3-open-button:hover {
+  -webkit-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+          transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+}
+
+.C3-open:checked + .C3-open-button {
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+          transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+}
+
+.C3-open:checked ~ .C3-item {
+        -webkit-transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+                transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+      }
+      .C3-open:checked ~ .C3-item:nth-child(3) {
+        -webkit-transition-duration: 160ms;
+                transition-duration: 160ms;
+        -webkit-transform: translate3d(114.42548px, 30.48084px, 0);
+                transform: translate3d(114.42548px, 30.48084px, 0);
+      }
+      .C3-open:checked ~ .C3-item:nth-child(4) {
+        -webkit-transition-duration: 240ms;
+                transition-duration: 240ms;
+        -webkit-transform: translate3d(78.18543px, 100.2491px, 0);
+                transform: translate3d(78.18543px, 100.2491px, 0);
+      }
+      .C3-open:checked ~ .C3-item:nth-child(5) {
+        -webkit-transition-duration: 320ms;
+                transition-duration: 320ms;
+        -webkit-transform: translate3d(0.09158px, 114.99996px, 0);
+                transform: translate3d(0.09158px, 114.99996px, 0);
+      }
+      .C3-open:checked ~ .C3-item:nth-child(6) {
+        -webkit-transition-duration: 400ms;
+                transition-duration: 400ms;
+        -webkit-transform: translate3d(-77.04956px, 100.37192px, 0);
+                transform: translate3d(-77.04956px, 100.37192px, 0);
+      }
+      .C3-open:checked ~ .C3-item:nth-child(7) {
+        -webkit-transition-duration: 480ms;
+                transition-duration: 480ms;
+        -webkit-transform: translate3d(-114.40705px, 38.66307px, 0);
+                transform: translate3d(-114.40705px, 38.66307px, 0);
+      }
