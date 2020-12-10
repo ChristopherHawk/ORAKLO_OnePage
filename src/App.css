@@ -39,8 +39,10 @@ a {
 #tab-home2{
   
   color: rgb(253, 253, 253);
-  background: rgba(0, 0, 0, 0.664);
- 
+  background: rgba(0, 0, 0, 0.795);
+ background-repeat: no-repeat;
+ background-position: center;
+
   
   
 }
@@ -49,11 +51,21 @@ a {
   color: #ffffff;
   text-align: center;
   font-family: 'Major Mono Display', monospace;
+  letter-spacing: 1px;
+  font-size: 25px;
   position: fixed;
   top: 20%;
 
 }
+#SubTittle{
+  color: #c5a802fa;
+  text-align: center;
+  position: fixed;
+  top: 24%;
+  font-size: 16px;
+  letter-spacing: 0.9px;
 
+}
 
 
 

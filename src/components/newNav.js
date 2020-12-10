@@ -20,7 +20,9 @@ const RadialMenu = ({
   selectBGround,
   repeatBG,
   widthsBG, 
-  radialMenu
+  radialMenu,
+  setSound
+ 
   
 }) => {
 
@@ -40,6 +42,8 @@ const RadialMenu = ({
     selectBGround(BGMenu)
     repeatBG('no-repeat')
     widthsBG('cover')
+    setSound()
+   
   }
 
 

@@ -19,9 +19,16 @@ import Cyrcle2 from './parts/cyrcle2';
 import Cyrcle3 from './parts/cyrcle3';
 import Cyrcle4 from './parts/cyrcle4';
 import AvatarBox from './parts/avatar';
-
-
-
+//Schema
+import SchemaView from './parts/schema';
+//Body 
+import Somatos from '../../assets/body/somatos.gif';
+//Mind
+import Psique from '../../assets/body/psique.gif';
+//Relation
+import Vinculos from '../../assets/body/vinculos.gif';
+//Context
+import Contexto from '../../assets/body/contexto.gif';
 
 const Home = ({
   imgTeam, 
@@ -37,7 +44,9 @@ const Home = ({
   openMenu,
   closeMenu,
   BtnPages,
-  colorBG
+  colorBG,
+  subTitle,
+  sound
 }) => {
 
   useEffect(() => {
@@ -48,27 +57,40 @@ const Home = ({
   ReloadCenter()
   },[])// eslint-disable-line react-hooks/exhaustive-deps
 
-//change Cyrcle
 
+
+
+//change Cyrcle
 const physical = () =>{
   imgTeam(Body)
   divBtn(<Cyrcle/>)
   divTittle('CUERPO')
+  divBtn2(<SchemaView imgSchema={Somatos} contentTittle='CUERPO'/>)
+  setTimeout(()=>{ divBtn2()}, 4980);
+ 
 }
 const psychological = () =>{
   imgTeam(Brain)
   divBtn(<Cyrcle2/>)
   divTittle('MENTE')
+  divBtn2(<SchemaView imgSchema={Psique} contentTittle='MENTE'/>)
+  setTimeout(()=>{ divBtn2()}, 4780);
+  
+  
 }
 const relational = () =>{
   imgTeam(Relation)
   divBtn(<Cyrcle3/>)
   divTittle('RELACIÓN')
+  divBtn2(<SchemaView imgSchema={Vinculos} contentTittle='RELACIÓN'/>)
+  setTimeout(()=>{ divBtn2()}, 4880);
 }
 const contextual = () =>{
   imgTeam(Context)
   divBtn(<Cyrcle4/>)
   divTittle('CONTEXTO')
+  divBtn2(<SchemaView imgSchema={Contexto} contentTittle='CONTEXTO'/>)
+  setTimeout(()=>{ divBtn2()}, 4780);
 }
 const avatar = () =>{
   imgTeam(Avatar)
@@ -88,6 +110,7 @@ const clickCentralMenu = () =>{
 const ReloadCenter = () =>{
   imgTeam(Logo)
   divBtn()
+  divBtn2()
   divTittle('ORAKLO')
   closeMenu()
   setShadowBg(BGHome)
@@ -101,7 +124,8 @@ return (
 <Segment className="et-slide" id={colorBG}  >     
 
 <Header content={contentTittle} id='HomeTittle'/>
-
+{subTitle}
+{sound}
 <CardContent  >
 <Rings 
 clickCentralMenu={clickCentralMenu} 

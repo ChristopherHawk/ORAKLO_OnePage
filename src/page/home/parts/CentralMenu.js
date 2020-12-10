@@ -46,7 +46,8 @@ const NewView = ({
      
     <CardContent className="rotater">
       <CardContent className="btn btn-icon"  style={{background:'none'}}>
-      <i  >{divFunction}</i>        
+      <i>{divFunction}</i> 
+             
       </CardContent>
     </CardContent>
     

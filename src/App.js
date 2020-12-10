@@ -1,6 +1,6 @@
 
 import React, {useState, useEffect}  from 'react';
-import {  Container } from 'semantic-ui-react';
+import {  Container, Header } from 'semantic-ui-react';
 import './App.css';
 import './components/visual/css/panal.css';
 //--------------Nav----------------//
@@ -23,16 +23,14 @@ import QuestionPicture from './assets/change/question.gif';
 import MailPicture from './assets/change/mail.gif';
 import MenuIcon from './assets/change/menuIcon.webp';
 import voiceIcon from './assets/change/voice.gif';
-import Background from './assets/background.jpg';
-
 import BGHome from './assets/bgHome.jpg';
-
 //Voice Oraklo
-import MyVoice from './assets/answer1.mp3';
-
-
+import MyVoice from './assets/myV.mp3';
 //Control Description
 import Controls from './page/about/listenOrakle';
+//Sound Page
+import SoundPage from './assets/Vitality.mp3';
+
 
 
 function App() {
@@ -40,8 +38,10 @@ function App() {
   //Special Menu 
   const [tittle, setTittle] = useState('ORAKLO');
   const [colorBG, setColorBG] = useState('tab-home');
+  const [subTitle, setSubTitle] = useState([]);
   const [btn, setBtn] = useState([]);
   const [btn2, setBtn2] = useState([]);
+  const [sound, setSound] = useState([]);
   const [imgCenter, setImgCenter] = useState(Logo);
   const [shadowBg, setShadowBg] = useState(BGHome);
   const [shadowBgState, setShadowBgState] = useState('no-repeat');
@@ -49,32 +49,44 @@ function App() {
   const [shadowBgPosition, setShadowBgPosition] = useState('center');
   const [openCentralMenu, setOpenCentralMenu] = useState('NewMenu');
   
-  useEffect(() => {
+
+  
+
+  
+  useEffect(() => {    
     homeViewOver()
     homeView()
     aboutViewOver()
-    aboutView()
+    aboutView()    
     TeamViewOver()
     TeamView()
     mailViewOver()
     mailView()
     RadialOver()
     MouseOut()
-   
-   
+
+    setSubTitle(<Header content='Artificial Awareness AA' id='SubTittle'/>)
+
+    
+    
   },[])// eslint-disable-line react-hooks/exhaustive-deps
   
   
+
+
   //Central Menu
   const openMenu = () =>{
     setOpenCentralMenu('NewMenu  active')
     setColorBG('tab-home')
+    setSubTitle()
+   
  }
   
  
   
   const closeMenu = () =>{
     setOpenCentralMenu('NewMenu')    
+    setSubTitle(<Header content='Artificial Awareness AA' id='SubTittle'/>)
  }
   
 
@@ -82,85 +94,72 @@ function App() {
 const homeViewOver = () =>{
   setTittle('ORAKLO')
   setImgCenter(Logo)
-  setColorBG('tab-home')
   setBtn()
   setBtn2()
+  setSubTitle(<Header content='Artificial Awareness AA' id='SubTittle'/>)
+
   
 }
 const homeView = () =>{
   setTittle('ORAKLO')
   setImgCenter(Logo)
-  setColorBG('tab-home')
   setBtn()
+  setSound(<audio src={SoundPage} autoPlay  onEnded={aboutControls}></audio>)
   setBtn2()
+  setSubTitle(<Header content='Artificial Awareness AA' id='SubTittle'/>)
   
 }
 // About
 const aboutViewOver = () =>{
   setTittle('¿Qué es ORAKLO?')
   setImgCenter(QuestionPicture)
-  setColorBG('tab-home')
   setBtn()
   setBtn2()
-  
+  setSubTitle()
   
 }
+
 
 const aboutView = () =>{
   setTittle('¿Qué es ORAKLO?')
   setColorBG('tab-home2')
-  setShadowBg('')
   setImgCenter(voiceIcon)
   setBtn()
-  setBtn2(<iframe src={MyVoice} allow="autoplay" id='voice'/>)
+  setBtn2(<audio src={MyVoice} autoPlay  onEnded={aboutControls}></audio>) 
   
-  
-
 }
 const aboutControls= () =>{
   setTittle('¿Qué es ORAKLO?')
   setImgCenter(QuestionPicture)
   setBtn()
   setBtn2(
-  <Controls AgainListen={AgainListen} />)
-  
+  <Controls AgainListen={AgainListen}/>)
   setColorBG('tab-home')
   
-  
 }
-
-
 
 // About [Again]
 const AgainListen= () =>{
 
   setTittle('¿Qué es ORAKLO?')
   setImgCenter(voiceIcon)  
-  setShadowBg('')
   setBtn()
-  setBtn2(<iframe src={MyVoice} allow="autoplay" id='voice' onended={aboutControls}/>)
-  
+  setBtn2(<audio src={MyVoice} autoPlay  onEnded={aboutControls}></audio>) 
   setColorBG('tab-home2')
- 
   
 }
-
-
-
 
 
 // Team
 const TeamViewOver = () =>{
   setTittle('NM-ORAKLO')
   setImgCenter(TeamPicture)
-  setColorBG('tab-home')
   setBtn2()
-  
+  setSubTitle()
 }
 const TeamView = () =>{
   setTittle('NM-ORAKLO')
   setImgCenter(TeamPicture)
-  setColorBG('tab-home')
   setBtn2(<Slide setImgCenter={setImgCenter} selectBGround={setShadowBg} repeatBG={setShadowBgState}
     widthsBG={setShadowBgSize} positionBG={setShadowBgPosition} setTittle={setTittle}/>)
  
@@ -170,14 +169,12 @@ const TeamView = () =>{
 const mailViewOver = () =>{
   setTittle('Contacto')
   setImgCenter(MailPicture)
-  setColorBG('tab-home')
   setBtn()
-  
+  setSubTitle()
 }
 const mailView = () =>{
   setTittle('Contacto')
   setImgCenter(MailPicture)
-  setColorBG('tab-home')
   setBtn2(<Contact/>)
   
 }
@@ -189,6 +186,8 @@ const mailView = () =>{
     setBtn()
     setBtn2()
     
+   
+    
   }
   const RadialOver = () =>{
     setTittle('Radial Menu')
@@ -197,7 +196,8 @@ const mailView = () =>{
     setBtn()
     setBtn2()
     closeMenu()
-   
+    setSubTitle()
+    
   }
 
   
@@ -205,7 +205,9 @@ const mailView = () =>{
   <Container style={{background:`url(${shadowBg})`, backgroundPosition:`${shadowBgPosition}`, backgroundRepeat:`${shadowBgState}`, backgroundSize:`${shadowBgSize}`}}  fluid>
     
     <Parallax/>
-    <Home     
+    <Home   
+    sound={sound}  
+    subTitle={subTitle}
     colorBG={colorBG}
     openCentralMenu={openCentralMenu}
     openMenu={openMenu}
@@ -235,7 +237,10 @@ const mailView = () =>{
     teamOver={TeamViewOver}
     contactClick={mailView}  
     contactOver={mailViewOver}
-    outFocus={ MouseOut}/>
+    outFocus={ MouseOut}
+    setSound={setSound}
+    
+    />
   
   </Container>  
   );
