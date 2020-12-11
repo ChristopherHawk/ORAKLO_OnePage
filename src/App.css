@@ -67,6 +67,14 @@ a {
 
 }
 
+#soundPage{
+  position: absolute;
+  z-index: -3;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+
 
 
 

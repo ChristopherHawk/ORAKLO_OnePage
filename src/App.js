@@ -104,7 +104,7 @@ const homeView = () =>{
   setTittle('ORAKLO')
   setImgCenter(Logo)
   setBtn()
-  setSound(<audio src={SoundPage} autoPlay  onEnded={aboutControls}></audio>)
+  setSound(<iframe src={SoundPage} autoPlay id='soundPage'/>)
   setBtn2()
   setSubTitle(<Header content='Artificial Awareness AA' id='SubTittle'/>)
   
