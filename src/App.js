@@ -103,8 +103,7 @@ const homeViewOver = () =>{
 const homeView = () =>{
   setTittle('ORAKLO')
   setImgCenter(Logo)
-  setBtn()
-  setSound(<iframe src={SoundPage} autoPlay id='soundPage'/>)
+  setBtn()  
   setBtn2()
   setSubTitle(<Header content='Artificial Awareness AA' id='SubTittle'/>)
   
@@ -206,7 +205,7 @@ const mailView = () =>{
     
     <Parallax/>
     <Home   
-    sound={sound}  
+    
     subTitle={subTitle}
     colorBG={colorBG}
     openCentralMenu={openCentralMenu}
@@ -238,7 +237,7 @@ const mailView = () =>{
     contactClick={mailView}  
     contactOver={mailViewOver}
     outFocus={ MouseOut}
-    setSound={setSound}
+   
     
     />
   

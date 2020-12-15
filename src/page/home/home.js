@@ -10,7 +10,7 @@ import Body from '../../assets/change/body.gif';
 import Brain from '../../assets/change/brain.gif';
 import Relation from '../../assets/change/relation.gif';
 import Context from '../../assets/change/context.gif';
-import Avatar from '../../assets/change/avatar1.gif';
+import Avatar from '../../assets/change/avatar2.gif';
 import BGHome from '../../assets/bgHome.jpg';
 import BGMenu from '../../assets/bgMenu.jpg';
 //Submenu
@@ -45,8 +45,7 @@ const Home = ({
   closeMenu,
   BtnPages,
   colorBG,
-  subTitle,
-  sound
+  subTitle
 }) => {
 
   useEffect(() => {
@@ -94,7 +93,7 @@ const contextual = () =>{
 }
 const avatar = () =>{
   imgTeam(Avatar)
-  divBtn(<AvatarBox imgTeam={imgTeam}/>)
+  divBtn(<AvatarBox/>)
   divBtn2()
   divTittle('AVATAR')
 }
@@ -125,7 +124,6 @@ return (
 
 <Header content={contentTittle} id='HomeTittle'/>
 {subTitle}
-{sound}
 <CardContent  >
 <Rings 
 clickCentralMenu={clickCentralMenu} 

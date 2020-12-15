@@ -4,13 +4,10 @@ import './css/slide.css';
 //Photography Team
 import JPerez from '../../../assets/team/JosePerez.jpg';
 import RHiggins from '../../../assets/team/Rous.jpg';
-import JBarraza from '../../../assets/team/joseBarraza.png';
-import NBarraza from '../../../assets/team/Nestor.png';
+
 //Backgroun Team
 import CEOBG from '../../../assets/team/ceoBg.jpg';
-import CTOBG from '../../../assets/team/ctoBg.jpg';
 import MANAGERBG from '../../../assets/team/managerBg.jpg';
-import DEVELOPERBG from '../../../assets/team/developerBg.jpg';
 import TeamIcon from '../../../assets/change/team.gif';
 import TeamBG from '../../../assets/bgTeam.jpg';
 
@@ -68,36 +65,10 @@ const TeamSlide = ({
     positionBG('center')
   }
    
-  const  CTOIcon = () =>{
-    setTittle('Jose Barraza')
-    setUserName('Jose Barraza')
-    setUserPosition('CTO NM-ORAKLO ')
-    setUserDescription('Ing. Sistemas')
-    setUserMail('tecnologia@nm-oraklo.com')
-    setImgCenter(JBarraza)
-    selectBGround(CTOBG)
-    repeatBG('no-repeat')
-    widthsBG('cover')
-    positionBG('center')
-  }
-   
-  const  DesignerIcon = () =>{
-    setTittle('Néstor Barraza')
-    setUserName('Néstor Barraza')
-    setUserPosition('Developer UI/UX NM-ORAKLO')
-    setUserDescription('Desarrollador')
-    setUserMail('tecnologia@nm-oraklo.com')
-    setImgCenter(NBarraza)
-    selectBGround(DEVELOPERBG)
-    repeatBG('no-repeat')
-    widthsBG('cover')
-    positionBG('center')
-  }
+ 
   useEffect(() => {
     CeoIcon()     
-    managerIcon()
-    CTOIcon()
-    DesignerIcon()  
+    managerIcon()    
     DefaultTeam()
   },[])// eslint-disable-line react-hooks/exhaustive-deps
     
@@ -112,8 +83,6 @@ const TeamSlide = ({
         <CardGroup id='AllBtnTeam'>
         <Button id='btnTeam1'  icon='compass outline' onClick={CeoIcon} color='black' size='medium' circular/>
         <Button id='btnTeam2' icon='remove bookmark' onClick={ managerIcon} color='white' size='medium' style={{color:'black'}} circular/>
-        <Button id='btnTeam3'  icon='connectdevelop' onClick={CTOIcon} color='black' size='medium' circular/>
-        <Button id='btnTeam4' icon='gitlab' onClick={DesignerIcon} color='white' size='medium' style={{color:'black'}} circular/>
         </CardGroup>
 
       }
